@@ -8,6 +8,26 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
+            function determineDropDirection(){
+                $(".dropdown-menu").each( function(){
+                    $(this).css({
+                        visibility: "hidden",
+                        display: "block"
+                    });
+    
+                $(this).parent().removeClass("dropup");
+    
+                if ($(this).offset().top + $(this).outerHeight() > $(window).innerHeight() + $(window).scrollTop()){
+                    $(this).parent().addClass("dropup");
+                }
+    
+                $(this).removeAttr("style");
+                });
+            }
+
+            determineDropDirection();
+
+            $(window).scroll(determineDropDirection);
             $(document).ready(function(){
                  $("#chat2").hide();
                 $(".loadDiv1").click(function(){
@@ -29,30 +49,28 @@
             <div class="row">
             <div class="col-3 chat-list-column">
                 <div class="header row">
-                    <div class="col-6">
+                    <div class="col-2 inline">
                         <img src="dolsy.jpg" class="rounded-circle img-fluid" alt="Profile pic"> 
                     </div>
-                    <div class="col-2">
-                        
-                        <button class="btn btn-default btn-lg btn-link">
-                                <span class="fa fa-refresh fa-spin" aria-hidden="true"></span>
-                        </button>
-
-                    </div>
-                    <div class="col-2">
+                    <div class="col-10">
+                        <div class="col-md inline d-none d-sm-inline">
                             <button class="btn btn-default btn-lg btn-link">
-                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                                <span class="fa fa-refresh fa-spin res-icon" aria-hidden="true"></span>
                             </button>
-                            <span class="badge badge-notify">3</span>
-                    </div>
-                    <div class="col-2">
-                        <div class="dropdown">
-                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars" aria-hidden="true"></span></button>
+                        </div>
+                        <div class="col-md inline d-none d-sm-inline">
+                            <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-envelope-o res-icon" aria-hidden="true"></span>
+                            </button>
+                            <!--<span class="badge badge-notify">3</span>-->
+                        </div>
+                        <div class="dropdown col inline">
+                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars res-icon" aria-hidden="true"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#" class="list-group-item text-center">New Group</a></li>
-                                <li><a href="#" class="list-group-item text-center">Profile</a></li>
-                                <li><a href="#" class="list-group-item text-center">Archived</a></li>
-                                <li><a href="#" class="list-group-item text-center">Log out</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">New Group</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Profile</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Archived</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Log out</a></li>
                             </ul>
                         </div>
 
@@ -62,52 +80,54 @@
                     <div class="list-group" col-12>
                         <div class="list-group-item text-center loadDiv1">
                             <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
-                            <a href="#" >Raj</a>
+                            <a href="#" class="res-font-size">Raj</a>
                         </div>
                         <div class="list-group-item text-center loadDiv2">
                             <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
-                            <a href="#" >Priyu</a>
+                            <a href="#" class="res-font-size">Priyu</a>
                         </div>
                         <div class="list-group-item text-center loadDiv1">
                             <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
-                            <a href="#" >Aish</a>
+                            <a href="#" class="res-font-size">Aish</a>
                         </div>
                         <div class="list-group-item text-center loadDiv2">
                             <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
-                            <a href="#" >Pratik</a>
+                            <a href="#" class="res-font-size">Pratik</a>
                         </div>
                         <div class="list-group-item text-center loadDiv1">
                             <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
-                            <a href="#" >Pranay</a>
+                            <a href="#" class="res-font-size">Pranay</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="chat-content-column col-9">
                 <div class="header row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid">
                     </div>
-                    <div class="col-2">
-                        <button class="btn btn-default btn-lg btn-link">
-                                <span class="fa fa-search" aria-hidden="true"></span>
-                        </button>
-                        <span class="glyphicon glyphicon-search"></span>
-                    </div>
-                    <div class="col-2">
-                        <button class="btn btn-default btn-lg btn-link">
-                                <span class="fa fa-paperclip" aria-hidden="true"></span>
-                        </button>
-                    </div>
-                    <div class="col-2">
-                        <div class="dropdown">
-                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars" aria-hidden="true"></span></button>
+                    <div class="col-8">
+                        <div class="col inline">
+                            <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-search res-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    
+                        <div class="col inline">
+                            <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-paperclip res-icon" aria-hidden="true"></span>
+                            </button>
+                        </div> 
+                    
+                    
+                        <div class="dropdown col inline">
+                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars res-icon" aria-hidden="true"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#" class="list-group-item text-center">Contact Info</a></li>
-                                <li><a href="#" class="list-group-item text-center">Select Messages</a></li>
-                                <li><a href="#" class="list-group-item text-center">Mute</a></li>
-                                <li><a href="#" class="list-group-item text-center">Clear Messages</a></li>
-                                <li><a href="#" class="list-group-item text-center">Delete Chat</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Contact Info</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Select Messages</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Mute</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Clear Messages</a></li>
+                                <li><a href="#" class="list-group-item text-center res-font-size">Delete Chat</a></li>
                             </ul>
                         </div>
                     </div>
@@ -115,52 +135,52 @@
                     <div class="chat-content row" id="chat1">
                         <div class="container chat-me col-12">
                             <img src="dolsy.jpg" class="rounded-circle img-fluid" alt="ME">
-                            <p>Hello. How are you?</p>
-                            <span class="time-right">11:00</span>
+                            <p class="res-font-size">Hello. How are you?</p>
+                            <span class="time-right res-font-size">11:00</span>
                         </div>
 
                         <div class="container chat-you col-12">
                             <img src="you.jpg" alt="YOU" class="right rounded-circle img-fluid">
-                            <p>Hey! I'm fine. Thanks for asking!</p>
-                            <span class="time-left">11:01</span>
+                            <p class="res-font-size">Hey! I'm fine. Thanks for asking!</p>
+                            <span class="time-left res-font-size">11:01</span>
                         </div>
 
                         <div class="container chat-me col-12">
                             <img src="dolsy.jpg" alt="ME" class="rounded-circle img-fluid">
-                            <p>Sweet! So, what do you wanna do today?</p>
-                            <span class="time-right">11:02</span>
+                            <p class="res-font-size">Sweet! So, what do you wanna do today?</p>
+                            <span class="time-right res-font-size">11:02</span>
                         </div>
 
                         <div class="container chat-you col-12">
                             <img src="you.jpg" alt="YOU" class="right rounded-circle img-fluid">
-                            <p>Nah, not planned yet.</p>
-                            <span class="time-left">11:05</span>
+                            <p class="res-font-size">Nah, not planned yet.</p>
+                            <span class="time-left res-font-size">11:05</span>
                         </div>
                     </div>
 
                     <div class="chat-content row" id="chat2">
                         <div class="container chat-me col-12">
                             <img src="you.jpg" class="rounded-circle img-fluid" alt="ME">
-                            <p>Hello. Whats up Buddy?</p>
-                            <span class="time-right">11:00</span>
+                            <p class="res-font-size">Hello. Whats up Buddy?</p>
+                            <span class="time-right res-font-size">11:00</span>
                         </div>
 
                         <div class="container chat-you col-12">
                             <img src="dolsy.jpg" alt="YOU" class="right rounded-circle img-fluid">
-                            <p>Planning to go for dinner. Wanna join??</p>
-                            <span class="time-left">11:01</span>
+                            <p class="res-font-size">Planning to go for dinner. Wanna join??</p>
+                            <span class="time-left res-font-size">11:01</span>
                         </div>
 
                         <div class="container chat-me col-12">
                             <img src="you.jpg" alt="ME" class="rounded-circle img-fluid">
-                            <p>Sure.</p>
-                            <span class="time-right">11:02</span>
+                            <p class="res-font-size">Sure.</p>
+                            <span class="time-right res-font-size">11:02</span>
                         </div>
 
                         <div class="container chat-you col-12">
                             <img src="dolsy.jpg" alt="YOU" class="right rounded-circle img-fluid">
-                            <p>:)</p>
-                            <span class="time-left">11:05</span>
+                            <p class="res-font-size">:)</p>
+                            <span class="time-left res-font-size">11:05</span>
                         </div>
                     </div>
                 </div>

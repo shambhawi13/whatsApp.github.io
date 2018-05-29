@@ -3,6 +3,16 @@
 .container-fluid{
 	height: 100%;
 }
+.inline{
+	display: inline;
+	padding: 0px !important;
+}
+.res-icon{
+	font-size: 1.5vw !important;
+}
+.dropdown-toggle::after{
+	font-size: 1.5vw !important;
+}
 .row .chat-list-column {
 	border: 1px solid #D3D3D3;
 	height: 90vw;
@@ -17,13 +27,17 @@
 	height: 4vw;
 	width: 4vw;
 }
+.res-font-size{
+	font-size: 1.5vw;
+}
 
-..badge-notify{
+.badge-notify{
    background:red;
    position:relative;
    top: -20px;
    left: -35px;
 }
+
 
 .header{
 	padding-left: 1em;
@@ -71,7 +85,7 @@
 
 .container img {
     float: left;
-    max-width: 60px;
+    max-width: 3vw;
     width: 100%;
     margin-right: 20px;
     border-radius: 50%;

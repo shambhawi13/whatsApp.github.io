@@ -1,0 +1,177 @@
+    <html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>WhatsApp</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 $("#chat2").hide();
+                $(".loadDiv1").click(function(){
+                    $("#chat1").show();
+                    $("#chat2").hide();
+                });
+                $(".loadDiv2").click(function(){
+                    $("#chat2").show();
+                    $("#chat1").hide();
+                    
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-3 chat-list-column">
+                <div class="header row">
+                    <div class="col-6">
+                        <img src="dolsy.jpg" class="rounded-circle img-fluid" alt="Profile pic"> 
+                    </div>
+                    <div class="col-2">
+                        
+                        <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-refresh fa-spin" aria-hidden="true"></span>
+                        </button>
+
+                    </div>
+                    <div class="col-2">
+                            <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                            </button>
+                            <span class="badge badge-notify">3</span>
+                    </div>
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars" aria-hidden="true"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="list-group-item text-center">New Group</a></li>
+                                <li><a href="#" class="list-group-item text-center">Profile</a></li>
+                                <li><a href="#" class="list-group-item text-center">Archived</a></li>
+                                <li><a href="#" class="list-group-item text-center">Log out</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="chat-list row">
+                    <div class="list-group" col-12>
+                        <div class="list-group-item text-center loadDiv1">
+                            <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
+                            <a href="#" >Raj</a>
+                        </div>
+                        <div class="list-group-item text-center loadDiv2">
+                            <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
+                            <a href="#" >Priyu</a>
+                        </div>
+                        <div class="list-group-item text-center loadDiv1">
+                            <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
+                            <a href="#" >Aish</a>
+                        </div>
+                        <div class="list-group-item text-center loadDiv2">
+                            <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
+                            <a href="#" >Pratik</a>
+                        </div>
+                        <div class="list-group-item text-center loadDiv1">
+                            <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid profile-img">
+                            <a href="#" >Pranay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-content-column col-9">
+                <div class="header row">
+                    <div class="col-6">
+                        <img src="you.jpg" alt="YOU" class="rounded-circle img-fluid">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-search" aria-hidden="true"></span>
+                        </button>
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-default btn-lg btn-link">
+                                <span class="fa fa-paperclip" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <div class="dropdown">
+                            <button class="btn btn-default btn-lg btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-bars" aria-hidden="true"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="list-group-item text-center">Contact Info</a></li>
+                                <li><a href="#" class="list-group-item text-center">Select Messages</a></li>
+                                <li><a href="#" class="list-group-item text-center">Mute</a></li>
+                                <li><a href="#" class="list-group-item text-center">Clear Messages</a></li>
+                                <li><a href="#" class="list-group-item text-center">Delete Chat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    <div class="chat-content row" id="chat1">
+                        <div class="container chat-me col-12">
+                            <img src="dolsy.jpg" class="rounded-circle img-fluid" alt="ME">
+                            <p>Hello. How are you?</p>
+                            <span class="time-right">11:00</span>
+                        </div>
+
+                        <div class="container chat-you col-12">
+                            <img src="you.jpg" alt="YOU" class="right rounded-circle img-fluid">
+                            <p>Hey! I'm fine. Thanks for asking!</p>
+                            <span class="time-left">11:01</span>
+                        </div>
+
+                        <div class="container chat-me col-12">
+                            <img src="dolsy.jpg" alt="ME" class="rounded-circle img-fluid">
+                            <p>Sweet! So, what do you wanna do today?</p>
+                            <span class="time-right">11:02</span>
+                        </div>
+
+                        <div class="container chat-you col-12">
+                            <img src="you.jpg" alt="YOU" class="right rounded-circle img-fluid">
+                            <p>Nah, not planned yet.</p>
+                            <span class="time-left">11:05</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-content row" id="chat2">
+                        <div class="container chat-me col-12">
+                            <img src="you.jpg" class="rounded-circle img-fluid" alt="ME">
+                            <p>Hello. Whats up Buddy?</p>
+                            <span class="time-right">11:00</span>
+                        </div>
+
+                        <div class="container chat-you col-12">
+                            <img src="dolsy.jpg" alt="YOU" class="right rounded-circle img-fluid">
+                            <p>Planning to go for dinner. Wanna join??</p>
+                            <span class="time-left">11:01</span>
+                        </div>
+
+                        <div class="container chat-me col-12">
+                            <img src="you.jpg" alt="ME" class="rounded-circle img-fluid">
+                            <p>Sure.</p>
+                            <span class="time-right">11:02</span>
+                        </div>
+
+                        <div class="container chat-you col-12">
+                            <img src="dolsy.jpg" alt="YOU" class="right rounded-circle img-fluid">
+                            <p>:)</p>
+                            <span class="time-left">11:05</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+
+    </html>
